@@ -1,13 +1,21 @@
 import React, { Component } from 'react'
 import { Container } from 'flux/utils'
+import CountStore from './../stores/CountStore'
+import CountActionCreators from '../actions/CountActionCreators';
 
 class App extends Component {
-  state = {
-    count: 0
+  static getStores() {
+    return [
+      CountStore,
+    ]
   }
 
-  handleClick = (event) => {
-    this.setState({ count: this.state.count + 1})
+  static calculateState() {
+    return {
+      count: CountStore.getState(),
+
+      onClick: CountActionCreators.addCount,
+    }
   }
 
   render() {
@@ -15,7 +23,7 @@ class App extends Component {
       <div>
         <h1>App</h1>
         <button
-          onClick={this.handleClick}
+          onClick={this.state.onClick}
         >
           {this.state.count}
         </button>
@@ -24,6 +32,4 @@ class App extends Component {
   }
 }
 
-// export default Container.create(App)
-
-export default App
+export default Container.create(App)
