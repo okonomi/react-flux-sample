@@ -12,6 +12,8 @@ class CountStore extends ReduceStore {
         return state + 1
       case 'ACTION_TYPE_COUNT_SUB':
         return state - 1
+      case 'ACTION_TYPE_COUNT_CLEAR':
+        return 0
       default:
         return state
     }

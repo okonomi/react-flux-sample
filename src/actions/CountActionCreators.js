@@ -10,6 +10,11 @@ const CountActionCreators = {
     AppDispatcher.dispatch({
       type: 'ACTION_TYPE_COUNT_SUB',
     })
+  },
+  clearCount() {
+    AppDispatcher.dispatch({
+      type: 'ACTION_TYPE_COUNT_CLEAR',
+    })
   }
 }
 

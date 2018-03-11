@@ -16,6 +16,7 @@ class App extends Component {
 
       onAdd: CountActionCreators.addCount,
       onSub: CountActionCreators.subCount,
+      onClear: CountActionCreators.clearCount,
     }
   }
 
@@ -33,6 +34,11 @@ class App extends Component {
           onClick={this.state.onSub}
         >
           DOWN
+        </button>
+        <button
+          onClick={this.state.onClear}
+        >
+          CLEAR
         </button>
       </div>
     )
