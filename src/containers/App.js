@@ -14,7 +14,8 @@ class App extends Component {
     return {
       count: CountStore.getState(),
 
-      onClick: CountActionCreators.addCount,
+      onAdd: CountActionCreators.addCount,
+      onSub: CountActionCreators.subCount,
     }
   }
 
@@ -22,10 +23,16 @@ class App extends Component {
     return (
       <div>
         <h1>App</h1>
+        <p>{this.state.count}</p>
         <button
-          onClick={this.state.onClick}
+          onClick={this.state.onAdd}
         >
-          {this.state.count}
+          UP
+        </button>
+        <button
+          onClick={this.state.onSub}
+        >
+          DOWN
         </button>
       </div>
     )

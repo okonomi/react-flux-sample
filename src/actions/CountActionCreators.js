@@ -5,6 +5,11 @@ const CountActionCreators = {
     AppDispatcher.dispatch({
       type: 'ACTION_TYPE_COUNT_ADD',
     })
+  },
+  subCount() {
+    AppDispatcher.dispatch({
+      type: 'ACTION_TYPE_COUNT_SUB',
+    })
   }
 }
 

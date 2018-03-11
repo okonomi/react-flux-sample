@@ -10,6 +10,8 @@ class CountStore extends ReduceStore {
     switch (action.type) {
       case 'ACTION_TYPE_COUNT_ADD':
         return state + 1
+      case 'ACTION_TYPE_COUNT_SUB':
+        return state - 1
       default:
         return state
     }
